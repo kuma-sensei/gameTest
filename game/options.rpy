@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("gameTestbed")
+define config.name = _("Game Testbed")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,13 +23,14 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "Game Project, v0.01"
 
 
 ## Text that is placed on the game's about screen. To insert a blank line
 ## between paragraphs, write \n\n.
 
-define gui.about = _("")
+define gui.about = _("A simple game to test and prototype functionality. \
+Created by Kuma-sensei, Ice Cream, and Gopher.")
 
 
 ## A short name for the game used for executables and directories in the built
@@ -118,7 +119,7 @@ define config.window_hide_transition = Dissolve(.2)
 ## Controls the default text speed. The default, 0, is infinite, while any other
 ## number is the number of characters per second to type out.
 
-default preferences.text_cps = 0
+default preferences.text_cps = 100
 
 
 ## The default auto-forward delay. Larger numbers lead to longer waits, with 0
