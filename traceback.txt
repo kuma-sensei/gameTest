@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 48, in script
-    n "My name is [povname]!"
-KeyError: u'povname'
+  File "game/script.rpy", line 27, in script
+    "[n.gender]"
+AttributeError: 'ADVCharacter' object has no attribute 'gender'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 48, in script
-    n "My name is [povname]!"
+  File "game/script.rpy", line 27, in script
+    "[n.gender]"
   File "E:\Programming Center\RenPy\renpy-6.99.13-sdk\renpy\ast.py", line 624, in execute
     renpy.exports.say(who, what, interact=self.interact, *args, **kwargs)
   File "E:\Programming Center\RenPy\renpy-6.99.13-sdk\renpy\exports.py", line 1173, in say
@@ -22,9 +22,8 @@ Full traceback:
     s = formatter.vformat(s, (), kwargs)
   File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 563, in vformat
   File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 585, in _vformat
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 646, in get_field
-  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 605, in get_value
-KeyError: u'povname'
+  File "/home/tom/ab/x64lucid-deps/install/lib/python2.7/string.py", line 652, in get_field
+AttributeError: 'ADVCharacter' object has no attribute 'gender'
 
 Windows-8-6.2.9200
 Ren'Py 6.99.13.2919
