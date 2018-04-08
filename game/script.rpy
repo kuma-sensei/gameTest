@@ -32,13 +32,16 @@ label start:
     n "Is that right? So what's next?"
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
+    
     n "And that's all there is to it?"
+    
     e "That's all!"
     
     n "What about defining who I am? How do I get to tell you about me?"
     
     e "Good question. I guess you should check out the documentation!"
     
+    # Code segment to get name from user and save it to character n
     label name_incomplete:
     python:
         nname = renpy.input("What is your name?")
@@ -47,6 +50,8 @@ label start:
         if not nname:
             nname = "????"
         n.name = nname
+ 
+    # Place comments around to figure out what each segment does.
     menu:
         "Is the name [nname] correct?"
         "Yes":
