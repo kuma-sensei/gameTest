@@ -1,0 +1,66 @@
+﻿# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define e = Character("Eileen")
+define n = Character(what_italic=True, who_color = "#8888bb")
+
+
+# The game starts here.
+
+label start:
+    python:
+        n.name = None
+
+    # Show a background. This uses a placeholder by default, but you can
+    # add a file (named either "bg room.png" or "bg room.jpg") to the
+    # images directory to show it.
+
+    scene bg room
+
+    # This shows a character sprite. A placeholder is used, but you can
+    # replace it by adding a file named "eileen happy.png" to the images
+    # directory.
+
+    show eileen happy
+
+    # These display lines of dialogue.
+
+    e "You've created a new Ren'Py game."
+    
+    n "Is that right? So what's next?"
+
+    e "Once you add a story, pictures, and music, you can release it to the world!"
+    n "And that's all there is to it?"
+    e "That's all!"
+    
+    n "What about defining who I am? How do I get to tell you about me?"
+    
+    e "Good question. I guess you should check out the documentation!"
+    
+    label name_incomplete:
+    python:
+        nname = renpy.input("What is your name?")
+        nname = nname.strip()
+
+        if not nname:
+            nname = "????"
+        n.name = nname
+    menu:
+        "Is the name [nname] correct?"
+        "Yes":
+            jump name_complete
+        "No":
+            jump name_incomplete
+            
+    label name_complete:
+    
+    n "My name is [nname]!"
+
+    e "Well, I guess that's a start!"
+    
+    n "And hey, look, I have a name now!"
+    # This ends the game.
+
+    return
