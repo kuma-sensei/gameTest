@@ -66,6 +66,24 @@ label start:
     e "Well, I guess that's a start!"
     
     n "And hey, look, I have a name now!"
+    
+    menu:
+        e "Do you identify more closely as a boy or a girl?"
+        "Boy":
+            python:
+                n.gender = "m"
+            e "I see, good to know! So we can call you Mr. [n.name] then."
+        "Girl":
+            python:
+                n.gender = "f"
+            e "I see, so we can perhaps call you Ms. [n.name]? Got it."
+        "Neither":
+            python:
+                n.gender = "n"
+            e "Okay, that's just fine too! We can just call you [n.name]."
+    
+    e "So I wonder where this journey will take you next? Only time will tell!"
+    
     # This ends the game.
 
     return
